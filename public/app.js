@@ -1,10 +1,21 @@
 var app = function(){
     var url = 'http://hp-api.herokuapp.com/api/characters';
-    
+    bindEvents();
     makeRequest("GET", url, requestComplete);
    
   }
   
+  var bindEvents = function(){
+    var getStudentsDetails = document.getElementById('search-query');
+    var characterUnOrderedList = document.getElementById('characters');
+
+    searchQuery.addEventListener('keyup', function(){
+      characterUnOrderedList.innerHTML = '';
+      var url = 'http://hp-api.herokuapp.com/api/characters/students';
+      makeRequest("GET", url, requestComplete);
+    });
+  }
+   
 
   var makeRequest = function(method, url, callback){
     var request = new XMLHttpRequest();
