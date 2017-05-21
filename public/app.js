@@ -22,15 +22,28 @@ var app = function(){
     // console.log(data);
     var harryPotterContainer = document.getElementById('characters');
 
-    data.forEach(function(character){
+       data.forEach(function(character){
       var ul = document.createElement('ul');
        ul.innerHTML = "";
       var li = document.createElement("li")
       li.innerText =  '"name":'+character.name ;
-     
-    harryPotterContainer.appendChild(li);
+      harryPotterContainer.appendChild(li);
 
-     
+      var li = document.createElement("li")
+      li.innerText =  '"species":'+character.species ;
+      harryPotterContainer.appendChild(li);
+
+      var li = document.createElement("li")
+      li.innerText =  '"gender":'+character.gender ;
+      harryPotterContainer.appendChild(li);
+
+
+      var li = document.createElement("li")
+      li.innerHTML =  '<img src="'+character.image+'" width = "80%" height = "50%"/>';
+
+      
+     harryPotterContainer.appendChild(li);
+
       
 
   });
