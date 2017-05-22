@@ -38,7 +38,7 @@ var url = 'http://hp-api.herokuapp.com/api/characters';
     request.addEventListener('load', callback);
     request.send();
    request.addEventListener('load', function() {
-     loadHarryPotter(request.responseText);
+     harryPotterCharts(request.responseText);
    });
    
   }
@@ -50,7 +50,7 @@ var url = 'http://hp-api.herokuapp.com/api/characters';
     display(data);
   }
 
-  var loadHarryPotter = function(responseText){
+  var harryPotterCharts = function(responseText){
     var characters = JSON.parse(responseText);
     studentGenderData = [];
     for(character of characters) {
@@ -58,8 +58,11 @@ var url = 'http://hp-api.herokuapp.com/api/characters';
         name: character.name,
         y: character.gender
       });
+        
+
     }
-    new PieChart();
+    
+    new PieChart(studentGenderData);
   }
   var display = function(data){
      

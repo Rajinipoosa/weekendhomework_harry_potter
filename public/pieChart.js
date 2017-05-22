@@ -1,4 +1,4 @@
-var PieChart = function() {
+var PieChart = function(data) {
 
   var container = document.getElementById("pieChart");
 
@@ -13,9 +13,14 @@ var PieChart = function() {
     
     series: [
       {
-        name: "rajini"
+        data.forEach( function(character) {
+          // statements
+        });{
+        name: character.name
       }
+    }
     ]
+
   });
 
 };
