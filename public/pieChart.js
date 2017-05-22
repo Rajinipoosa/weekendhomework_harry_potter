@@ -1,7 +1,7 @@
 var PieChart = function(data) {
 
   var container = document.getElementById("pieChart");
-
+     console.log(data);
   var chart = new Highcharts.Chart({
     chart: {
       type: 'characters',

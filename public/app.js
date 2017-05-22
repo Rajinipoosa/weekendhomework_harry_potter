@@ -58,11 +58,11 @@ var url = 'http://hp-api.herokuapp.com/api/characters';
         name: character.name,
         y: character.gender
       });
-        
+        new PieChart(studentGenderData);
 
     }
     
-    new PieChart(studentGenderData);
+   
   }
   var display = function(data){
      
